@@ -1,0 +1,5 @@
+_pycache_/
+*.pyc
+.coverage
+.pytest_cache/
+htmlcov/

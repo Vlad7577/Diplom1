@@ -18,3 +18,6 @@ class Ingredient:
 
     def get_type(self) -> str:
         return self.type
+
+    def _str_(self):
+        return f"= {self.name} ="

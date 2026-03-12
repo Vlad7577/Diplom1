@@ -1,9 +1,9 @@
 from typing import List
 
-from praktikum.bun import Bun
-from praktikum.burger import Burger
-from praktikum.database import Database
-from praktikum.ingredient import Ingredient
+from bun import Bun
+from burger import Burger
+from database import Database
+from ingredient import Ingredient
 
 
 def main():
@@ -13,13 +13,13 @@ def main():
     # Создадим новый бургер
     burger: Burger = Burger()
 
-    # Считаем список доступных булок из базы данных
+    # Получаем список доступных булок
     buns: List[Bun] = database.available_buns()
 
-    # Считаем список доступных ингредиентов из базы данных
+    # Получаем список доступных ингредиентов
     ingredients: List[Ingredient] = database.available_ingredients()
 
-    # Соберём бургер
+    # Собираем бургер
     burger.set_buns(buns[0])
 
     burger.add_ingredient(ingredients[1])
@@ -27,15 +27,15 @@ def main():
     burger.add_ingredient(ingredients[3])
     burger.add_ingredient(ingredients[5])
 
-    # Переместим слой с ингредиентом
+    # Перемещаем ингредиент
     burger.move_ingredient(2, 1)
 
-    # Удалим ингредиент
+    # Удаляем ингредиент
     burger.remove_ingredient(3)
 
-    # Распечатаем рецепт бургера
+    # Печатаем рецепт
     print(burger.get_receipt())
 
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     main()
